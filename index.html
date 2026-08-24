@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Harsha Musunuru — Embedded Software Engineer</title>
+<meta name="description" content="Embedded software engineer in Bristol. Firmware to application: ARM Cortex-M, real-time acquisition on Linux SBCs, medical device software under IEC 62304, and the desktop and mobile apps on top.">
+<meta name="author" content="Sri Harsha Musunuru">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sri Harsha Musunuru — Embedded Software Engineer">
+<meta property="og:description" content="I work at the boundary where hardware stops being predictable and software has to cope.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ======================================================================
+     HERO
+     ====================================================================== -->
+<header class="hero">
+  <h1 class="hero__name">Sri&nbsp;Harsha Musunuru</h1>
+  <p class="hero__role">Embedded software engineer — firmware to application · Bristol, UK</p>
+
+  <p class="hero__thesis">I work at the boundary where hardware stops being predictable and software has to cope.</p>
+
+  <p class="hero__sub">Three years at a medtech startup, across two device programmes: a regulated clinical investigation device on Linux/CM4 under ISO&nbsp;13485 and IEC&nbsp;62304, and a commercial assistive-gaming peripheral where I'm the only software engineer — ARM Cortex-M firmware, the USB protocol, a C#/.NET Windows application, and an Android app.</p>
+
+  <ul class="hero__links">
+    <li><a href="mailto:REPLACE@example.com">Email</a></li>
+    <li><a href="https://github.com/harshamsh">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/REPLACE">LinkedIn</a></li>
+    <li><a href="cv.pdf">CV (PDF)</a></li>
+  </ul>
+
+  <!-- Signature element: the bus-state capture from Case Study A -->
+  <figure class="trace">
+    <figcaption class="trace__head">
+      <span>Capture · shared I²C bus, ES005 pendant · <strong>CH334F + STM32</strong></span>
+      <span>Case study A</span>
+    </figcaption>
+    <div class="trace__body">
+      <svg viewBox="0 0 940 232" role="img" aria-label="A logic-analyser style capture of an I-squared-C bus. The clock and data lines toggle normally, then roughly one second after reset both lines snap low and stay there.">
+        <line class="rail" x1="24" y1="208" x2="940" y2="208"></line>
+
+        <!-- healthy region -->
+        <path class="wave wave--ok" d="M24 88 L36 88 L36 40 L54 40 L54 88 L72 88 L72 40 L90 40 L90 88 L108 88 L108 40 L126 40 L126 88 L144 88 L144 40 L162 40 L162 88 L180 88 L180 40 L198 40 L198 88 L216 88 L216 40 L234 40 L234 88 L252 88 L252 40 L270 40 L270 88 L288 88 L288 40 L306 40 L306 88 L324 88 L324 40 L342 40 L342 88 L360 88 L360 40 L378 40 L378 88 L396 88 L396 40 L414 40 L414 88 L432 88 L432 40 L450 40 L450 88 L468 88 L468 40 L486 40 L486 88 L504 88 L504 40 L522 40 L522 88 L540 88 L540 40 L558 40 L558 88 L588 88"></path>
+        <path class="wave wave--ok" d="M24 128 L108 128 L108 176 L144 176 L144 128 L180 128 L180 176 L252 176 L252 128 L288 128 L288 176 L324 176 L324 128 L396 128 L396 176 L432 176 L432 128 L468 128 L468 176 L504 176 L504 128 L588 128"></path>
+
+        <!-- fault region -->
+        <line class="marker" x1="588" y1="20" x2="588" y2="200"></line>
+        <path class="wave wave--fault" d="M588 88 L940 88"></path>
+        <path class="wave wave--fault" d="M588 128 L588 176 L940 176"></path>
+
+        <text class="trace__label" x="24" y="30">SCL</text>
+        <text class="trace__label" x="24" y="118">SDA</text>
+        <text class="trace__annot trace__annot--calm" x="24" y="226">bus released to high-Z, sniffed before each page write</text>
+        <text class="trace__annot" x="600" y="226">≈1–1.5 s after RESET ↓ — both lines actively driven low</text>
+      </svg>
+    </div>
+    <p class="trace__caption">Bulk EEPROM writes kept failing partway through. Nine plausible causes were tested and killed before the real mechanism surfaced — and the test that found it was the one that read the bus directly.</p>
+  </figure>
+</header>
+
+<!-- ======================================================================
+     LAYOUT
+     ====================================================================== -->
+<div class="layout">
+
+  <nav class="rail" aria-label="Page sections">
+    <ol>
+      <li><a href="#work"><span class="rail__key">§</span> Selected work</a></li>
+      <li><a href="#case-a"><span class="rail__key">A</span> Bus hijack</a></li>
+      <li><a href="#case-b"><span class="rail__key">B</span> The clock that lied</a></li>
+      <li><a href="#case-c"><span class="rail__key">C</span> Vitals from raw Bayer</a></li>
+      <li><a href="#case-d"><span class="rail__key">D</span> Owning the desktop app</a></li>
+      <li><a href="#case-e"><span class="rail__key">E</span> Proving it's assistive</a></li>
+      <li class="rail__group"></li>
+      <li><a href="#sdlc"><span class="rail__key">§</span> How I build</a></li>
+      <li><a href="#judgement"><span class="rail__key">§</span> How I work</a></li>
+      <li><a href="#about"><span class="rail__key">§</span> About &amp; skills</a></li>
+      <li><a href="#tools"><span class="rail__key">§</span> Tools</a></li>
+      <li><a href="#contact"><span class="rail__key">§</span> Contact</a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <!-- ================= SELECTED WORK ================= -->
+    <section class="section" id="work">
+      <p class="eyebrow">Selected work</p>
+      <h2 class="section__title">Five problems, and what each one took</h2>
+      <p class="section__intro lede">A and B are debugging: faults that read as healthy until something forced them into the open. C is the regulated build. D and E are product ownership — one engineer, four layers, out the door.</p>
+
+      <!-- ---------------- CASE A ---------------- -->
+      <article class="case" id="case-a">
+        <p class="case__key">Case study A</p>
+        <h3 class="case__title">The chip that hijacked its own bus</h3>
+        <p class="case__hook">Bulk EEPROM writes kept failing mid-sequence on a shared I²C bus. Nine plausible causes were tested and killed before the real one surfaced.</p>
+
+        <dl class="spec">
+          <div><dt>System</dt><dd>ES005 pendant — STM32 + CH334F USB hub sharing an I²C bus with a 24LC02 EEPROM</dd></div>
+          <div><dt>My role</dt><dd>Firmware; sole software engineer on the programme</dd></div>
+          <div><dt>Tools</dt><dd>Bit-banged I²C, USB-CDC command shell, logic analyser, SWD</dd></div>
+        </dl>
+
+        <h4>Context</h4>
+        <p>The hub reads its descriptor config — VID/PID, strings, serial — from the EEPROM at boot, sharing STM32 pins PA2/PA3. To provision a unit, the STM32 pulls the hub's RESET low to take the bus, then bit-bangs I²C to write config, driven by a USB-CDC command interface (<span class="mono">CHECK / READ / WRITE / BLANK / FLASH</span>). Single-byte operations worked perfectly from day one. Bulk operations — a 256-byte blank, a ~33-byte full flash — kept failing partway through.</p>
+
+        <h4>Elimination, by direct test rather than assumption</h4>
+        <ol class="ladder">
+          <li><span class="ladder__hyp">Bad EEPROM cell</span><span class="ladder__why">Failure address moved run to run.</span></li>
+          <li><span class="ladder__hyp">Bad data pattern</span><span class="ladder__why">Blanking to all-0xFF failed too.</span></li>
+          <li><span class="ladder__hyp">Page-boundary bug</span><span class="ladder__why">Failures landed on unaligned addresses.</span></li>
+          <li><span class="ladder__hyp">Write-cycle race</span><span class="ladder__why">ACK polling changed nothing.</span></li>
+          <li><span class="ladder__hyp">Clock too fast for the bus</span><span class="ladder__why">Slowing the clock made it <em>worse</em>.</span></li>
+          <li><span class="ladder__hyp">Address-specific fault</span><span class="ladder__why">Pivotal test: starting the blank at 0x80 still failed at the same <em>operation count</em>, not the same address.</span></li>
+          <li><span class="ladder__hyp">Write/read coupling</span><span class="ladder__why">Isolating write-only still failed.</span></li>
+          <li><span class="ladder__hyp">Repeated-start protocol bug</span><span class="ladder__why">Single reads use the same repeated-start and always work. A real protocol bug fails on operation #1, not #39.</span></li>
+          <li class="is-cause"><span class="ladder__hyp">Something outside the transaction is taking the bus</span><span class="ladder__why">Two clues pointed here: a <em>slower</em> clock failed <em>sooner</em> — the opposite of a bus-margin problem — and a longer idle delay before writing also failed sooner. The clock was running from the moment RESET went low, whether or not real work was happening. The failure was time-bound, not signal-bound.</span></li>
+        </ol>
+
+        <h4>The decisive experiment</h4>
+        <p>Before each page write, release the bus to high-Z and sniff SDA and SCL directly.</p>
+
+        <ul class="busstate">
+          <li class="ok"><span>Healthy — bus idle</span><b>11</b></li>
+          <li class="bad"><span>At failure — held</span><b>00</b></li>
+        </ul>
+
+        <p>Both lines snapped to zero and stayed there — actively driven low, not floating.</p>
+
+        <h4>Root cause</h4>
+        <p>The behaviour is consistent with the hub repurposing its I²C-capable pins as LED-driver outputs after boot: roughly 1–1.5&nbsp;s after the RESET falling edge, both shared lines are driven low regardless of bus activity, and holding RESET low doesn't clear it — which points to a level-latched internal state change rather than anything happening on the bus. This is the best explanation the evidence supports; I haven't confirmed the pin multiplexing against the vendor datasheet.</p>
+
+        <h4>Fix</h4>
+        <p>Pulse RESET before each small write chunk to re-arm a fresh time budget — one 8-byte page per pulse, about 32 resets for a full 256-byte blank, verified clean throughout. The permanent fix, scheduled for the next board spin, is a load switch gating the hub's power pin so it's fully off during provisioning: no powered chip, nothing to latch.</p>
+
+        <div class="annotated">
+          <div>
+            <h4>Why it matters</h4>
+            <p>Nine confident, plausible-sounding theories died against evidence before the real mechanism surfaced. The discriminating test — reading the bus state directly — should have run first, not ninth. That changed how I sequence diagnostics: find the test that splits the hypothesis space before running the ones that only confirm a favourite theory.</p>
+          </div>
+          <aside class="note">
+            <span class="note__label">Transferable</span>
+            <p>Cost of the wrong order: eight test cycles. Cost of the right one: a single capture. Ordering tests by how much they eliminate, not by how likely they are to be right, is the whole lesson.</p>
+          </aside>
+        </div>
+      </article>
+
+      <!-- ---------------- CASE B ---------------- -->
+      <article class="case" id="case-b">
+        <p class="case__key">Case study B</p>
+        <h3 class="case__title">The clock that lied</h3>
+        <p class="case__hook">A fielded clinical device kept losing time. The kernel said the clock was fine.</p>
+
+        <dl class="spec">
+          <div><dt>System</dt><dd>CM4-based oximeter, deployed for clinical investigation</dd></div>
+          <div><dt>My role</dt><dd>Root cause, firmware fix, RCA and test SOP</dd></div>
+          <div><dt>Stack</dt><dd>Linux, <span class="mono">rtc-ds1307</span> kernel driver, DS3231 RTC</dd></div>
+        </dl>
+
+        <h4>Context</h4>
+        <p>Intermittent timestamp failures on units already in the field — the worst possible place for a bug that undermines the clinical data record.</p>
+
+        <h4>Investigation</h4>
+        <p>Traced the <span class="mono">rtc-ds1307</span> driver path against the DS3231 datasheet. The Oscillator Stop Flag — the exact signal designed to warn that the clock is untrustworthy — was being masked.</p>
+
+        <h4>Root cause</h4>
+        <p>A dead backup battery. The RTC lost oscillation on power-down, but the driver path never surfaced the flag to userspace, so the system reported a valid clock while holding invalid time.</p>
+
+        <h4>Fix and prevention</h4>
+        <p>Firmware fix shipped to fielded units, plus a written root-cause analysis and a test SOP, so the failure mode is explicitly checked rather than remembered.</p>
+
+        <div class="annotated">
+          <div>
+            <h4>Why it matters</h4>
+            <p>A silent failure in a safety-relevant path. The work wasn't the fix — it was making an invisible failure state visible, and then making the check part of process so it can't quietly go missing again.</p>
+          </div>
+          <aside class="note">
+            <span class="note__label">Pattern</span>
+            <p>A component reporting health is not the same as a component being healthy. The interesting question is always which layer dropped the warning.</p>
+          </aside>
+        </div>
+      </article>
+
+      <!-- ---------------- CASE C ---------------- -->
+      <article class="case" id="case-c">
+        <p class="case__key">Case study C</p>
+        <h3 class="case__title">Real-time vitals from a raw camera stream</h3>
+        <p class="case__hook">10-bit Bayer frames in, SpO₂ and pulse rate out — concurrently, and without touching disk.</p>
+
+        <dl class="spec">
+          <div><dt>System</dt><dd>Class A medical device software, Linux SBC, USB camera</dd></div>
+          <div><dt>Standards</dt><dd>IEC 62304, ISO 13485, ISO 14971</dd></div>
+          <div><dt>My role</dt><dd>Owned the software transition from research code to regulated device software</dd></div>
+        </dl>
+
+        <h4>Approach</h4>
+        <p>Custom parsing of the 10-bit pre-Bayer format with a bespoke RGB conversion that fits inside the frame budget, with no measurable increase in end-to-end latency against the unconverted path. Linux IPC — shared memory and semaphores with double buffering — so acquisition and analysis run concurrently without contention and without a disk I/O bottleneck. The mutex and semaphore design was reviewed explicitly for race conditions rather than assumed correct.</p>
+
+        <h4>Regulatory dimension</h4>
+        <p>This is the programme where I owned the IEC 62304 documentation set: Software Development Plan, SOPs, dFMEA, configuration management, problem resolution, and requirements traceability through to verification. Architecture documented in UML/SysML with sequence diagrams; risk controls traced from the dFMEA into specific code paths. Alongside it, requirements engineering across a cross-functional team, a custom I²C driver for an SSD1309 OLED surfacing live vitals and patient warnings, and device configuration for EMC testing.</p>
+
+        <div class="callout">
+          <p class="eyebrow">Engineering judgement — the stack that had to change</p>
+          <p>The R&amp;D precursor to this system was an Electron/React GUI over an async Python backend — the right call for a fast, polished demo on a PC, with the backend built to be portable. When the target moved to a constrained SBC, the backend ported cleanly. The Electron frontend didn't, and had to be rebuilt in PyQt.</p>
+          <p>The fix worked. The honest lesson is upstream: on an R&amp;D project with that many unknowns, the deployment envelope should have been probed <em>before</em> committing to a heavy frontend framework, not after. It changed how I approach stack decisions — decouple the tested core from the UI early, keep the choice reversible, and ask about the hardware target before the demo target.</p>
+        </div>
+      </article>
+
+      <!-- ---------------- CASE D ---------------- -->
+      <article class="case" id="case-d">
+        <p class="case__key">Case study D</p>
+        <h3 class="case__title">From silicon to shipped: owning the Windows application</h3>
+        <p class="case__hook">One engineer, four layers — custom board firmware, USB protocol, a C#/.NET desktop app, an Android app. This is the desktop half.</p>
+
+        <dl class="spec">
+          <div><dt>Product</dt><dd>The Gamer's EarSwitch — in-ear control device, shown at CES 2026</dd></div>
+          <div><dt>My role</dt><dd>Sole software engineer: requirements, architecture, implementation, test, packaging, release, docs, support diagnostics</dd></div>
+          <div><dt>Stack</dt><dd>C# / .NET, WPF, MVVM, USB CDC</dd></div>
+        </dl>
+
+        <h4>Context</h4>
+        <p>The device lets a user trigger a game action with an ear movement — built for streamers and, more importantly, for players with limited hand mobility. The Windows application is the primary experience: it takes camera frames, detects the ear click, calibrates to the individual user, and injects the mapped input into whatever game is running.</p>
+
+        <h4>Architecture</h4>
+        <ul>
+          <li><strong>Layered</strong> — device transport (USB CDC serial) → signal and detection → view models → XAML views.</li>
+          <li><strong>Seams for testing</strong> — the transport layer sits behind an interface, so detection logic can be exercised against recorded frames with no pendant attached. Dependency injection for composition, so swapping in a mock device is a one-line change. The seam exists and is used; coverage is partial rather than complete.</li>
+          <li><strong>Threading discipline</strong> — frame acquisition and processing off the UI thread, marshalled back via the dispatcher, with backpressure so a slow UI can never stall acquisition.</li>
+          <li><strong>Input injection</strong> into the foreground game, with the mapping configurable per user.</li>
+        </ul>
+
+        <h4>A deliberate UX call</h4>
+        <p>A persistent status card rather than toast notifications. A toast on every ear click would be unusable mid-game — the user needs to <em>glance</em> at state, not be interrupted by it. Small decision, but it's the kind that only gets made by someone who understands both the signal and the person using it.</p>
+
+        <h4>Release engineering</h4>
+        <p>Versioned, installable builds produced through the pipeline rather than from a developer machine; a written release checklist so a release is a repeatable procedure and not a memory exercise; and structured logging written for <em>support</em> rather than for the author — when a user reports that it stopped detecting, the log should say which layer failed.</p>
+
+        <div class="annotated">
+          <div>
+            <h4>Why it matters</h4>
+            <p>The interesting engineering in a consumer hardware product isn't only in the firmware. The application is where the hardware's ambiguity becomes a user-facing promise — your ear click will register, every time, fast enough to matter — and keeping that promise is an architecture problem, a threading problem, and a release-discipline problem at the same time.</p>
+          </div>
+          <aside class="note">
+            <span class="note__label">Scope</span>
+            <p>No separate application team to hand any layer to. Every decision from the USB byte format to the installer was one person's, which is uncomfortable and clarifying in roughly equal measure.</p>
+          </aside>
+        </div>
+      </article>
+
+      <!-- ---------------- CASE E ---------------- -->
+      <article class="case" id="case-e">
+        <p class="case__key">Case study E</p>
+        <h3 class="case__title">The app that had to prove it was assistive</h3>
+        <p class="case__hook">An app that presses buttons in other apps looks exactly like the automation Google Play bans. Getting it through review meant proving it was the opposite — while running the whole signal pipeline on-device.</p>
+
+        <dl class="spec">
+          <div><dt>Product</dt><dd>Android version of the Gamer's EarSwitch</dd></div>
+          <div><dt>My role</dt><dd>Took it from R&amp;D prototype through architecture, hardware interface, on-device processing, and Play policy preparation</dd></div>
+          <div><dt>Stack</dt><dd>Kotlin / Java, Accessibility Services, foreground services, USB host / BLE</dd></div>
+        </dl>
+
+        <h4>The structural problem</h4>
+        <p>On Android, injecting input into <em>other</em> apps means the Accessibility Services API. That API is under heavy Play scrutiny for good reason — it's the same mechanism used by malware, click-farms, and automation tooling — so policy requires that an app using it exists to help users with disabilities, declares that use explicitly, and discloses it prominently. The Gamer's EarSwitch genuinely is an assistive input device; that's the origin of the product. But "genuinely assistive" isn't a technical property a reviewer can read off a binary. It has to be argued, evidenced, and made legible in the listing, the in-app disclosure, and the declaration.</p>
+
+        <h4>Hardware interface on a platform that doesn't want you talking to hardware</h4>
+        <ul>
+          <li>A device link with a connection state machine that survives detach and reattach, permission revocation, and the user unplugging mid-session.</li>
+          <li>A foreground service with a persistent notification, so the pipeline keeps running when the app isn't in front — and so it satisfies Android's background execution limits rather than being silently killed.</li>
+          <li>Doze, battery optimisation, and OEM-specific process killing handled explicitly rather than discovered in the field.</li>
+        </ul>
+
+        <h4>On-device signal processing</h4>
+        <p>Ear-click detection runs entirely on the phone. That's a latency requirement first — a click has to register fast enough to be usable in a game, and a round trip to a server is not an option — and it also made the Data Safety declaration straightforward: nothing to declare, because nothing leaves the phone. Per-user calibration handles the fact that every ear, every fit, and every pendant seating is slightly different.</p>
+
+        <h4>Cross-platform parity — the hard part nobody sees</h4>
+        <p>The same detection logic behaved <em>more sensitively</em> on Android than on the PC. A fishbone and 5-whys under time pressure traced it to an optimisation in my own pipeline that had raised the noise floor. Fixed, bringing the Android detection output back in line with the PC pipeline across the test set — which matters because a user shouldn't effectively get a different device depending on what they plug it into.</p>
+
+        <h4>Preparing for review</h4>
+        <ul>
+          <li>Accessibility-services declaration and permissions justification, with the assistive use case evidenced rather than asserted.</li>
+          <li>Prominent in-app disclosure explaining what the service does and why it needs the permission.</li>
+          <li>A Data Safety declaration backed by the on-device architecture — the privacy claim is true because of a design decision, not a promise.</li>
+          <li>Privacy policy, store listing, and staged testing tracks.</li>
+        </ul>
+
+        <div class="annotated">
+          <div>
+            <h4>Why it matters</h4>
+            <p>Building it right was necessary and not sufficient. Getting it in front of users meant making a case, to a review process designed to assume the worst about this exact API, that the app is what it says it is. What made that case winnable was an architectural choice made months earlier to process everything on-device.</p>
+          </div>
+          <aside class="note">
+            <span class="note__label">Transferable</span>
+            <p>Compliance work is usually decided long before the form is filled in. The privacy answer was already true; all that was left was showing why.</p>
+          </aside>
+        </div>
+      </article>
+    </section>
+
+    <!-- ================= SDLC ================= -->
+    <section class="section" id="sdlc">
+      <p class="eyebrow">How I build and maintain</p>
+      <h2 class="section__title">Process, sized to the risk</h2>
+      <p class="section__intro lede">The clinical programme has IEC 62304 forcing discipline on it. The commercial programme has nothing forcing anything — which is exactly how an early-stage consumer product ends up an unmaintainable prototype that ships anyway.</p>
+
+      <p style="margin-top:26px">I set the process for the Gamer's EarSwitch software deliberately: borrowing the parts of regulated practice that earn their keep, and dropping the parts that only exist to satisfy an auditor.</p>
+
+      <ul class="practice">
+        <li>
+          <h3>Source control and review</h3>
+          <p>A defined branching strategy and pull-request review across firmware, desktop, and Android, so no change reaches a release build without a second look.</p>
+        </li>
+        <li>
+          <h3>CI/CD on GitHub Actions</h3>
+          <p>Automated build pipelines for each layer, producing versioned artifacts. A broken build is visible immediately rather than at release time.</p>
+        </li>
+        <li>
+          <h3>Versioning and release</h3>
+          <p>A written release checklist, so a release is a repeatable procedure rather than a memory exercise.</p>
+        </li>
+        <li>
+          <h3>Documentation that survives me</h3>
+          <p>Architecture and design documentation where it earns its place, interface and protocol specifications for the USB CDC command set, decision records for the choices that would otherwise get re-litigated by whoever inherits the code, test plans, and user-facing docs.</p>
+        </li>
+        <li>
+          <h3>Traceability, proportionate</h3>
+          <p>I carried over the habits that earn their keep from the regulated side — written interface specs, recorded design decisions, a defined path from issue report to verified fix — without the full traceability apparatus, which this risk profile doesn't justify. Knowing which process is load-bearing and which is theatre is most of the skill.</p>
+        </li>
+        <li>
+          <h3>Problem resolution</h3>
+          <p>Issue tracking with a defined path from report to root cause to fix to verification, carried over from the 62304 problem-resolution process on the clinical side.</p>
+        </li>
+        <li>
+          <h3>Diagnostics designed for support</h3>
+          <p>Structured logging on both applications, so a field problem produces evidence instead of a guess.</p>
+        </li>
+      </ul>
+
+      <p style="margin-top:26px"><strong>The point:</strong> the commercial software should be maintainable by someone who isn't me. Everything above exists to make that true.</p>
+    </section>
+
+    <!-- ================= HOW I WORK ================= -->
+    <section class="section" id="judgement">
+      <p class="eyebrow">How I work</p>
+      <h2 class="section__title">Say it early, in a form people can act on</h2>
+
+      <div class="annotated">
+        <div>
+          <p class="lede" style="margin-top:22px">When a system's requirements outrun what the platform can actually do, I say so early rather than quietly trying to make it work.</p>
+          <p>On the gaming-control product, stakeholders had a market vision that hadn't been checked against platform reality — no clear answer on reliably detecting a tap on Android, or on controlling a games console. I brought a MoSCoW breakdown to the people who owned the vision, was explicit about which "musts" weren't achievable in the timeline and why, and proposed concrete alternatives for the rest.</p>
+          <p>Once we agreed the real scope, the schedule was built with contingency instead of false optimism — and the product reached prerelease without over-promising.</p>
+        </div>
+        <aside class="note">
+          <span class="note__label">Same instinct, different setting</span>
+          <p>The Android-versus-PC parity work in case study E is the debugging version of this: name the discrepancy, find the mechanism, don't ship two products that behave differently and hope nobody notices.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <p class="eyebrow">About</p>
+      <h2 class="section__title">Instrumentation, broadly defined</h2>
+
+      <p class="section__intro lede" style="margin-top:20px">The through-line across everything above is finding hidden or ambiguous system state and making it legible.</p>
+
+      <p>A biosignal buried in a raw Bayer stream. A hub chip silently hijacking a shared I²C bus mid-provisioning. An RTC fault that read as healthy while holding invalid time. The job is always the same: find the invisible state, prove what it actually is, build something reliable on top of it — then document it so the next person doesn't have to rediscover it.</p>
+
+      <p>I've spent three years at EarSwitch Ltd, a Bristol medtech startup founded by a GP after watching motor neurone disease patients lose the ability to communicate. Two product lines: clinical vital-sign monitoring, and assistive gaming control. I'm the sole software engineer on the commercial programme and the main software contributor on the clinical one, working directly with the CTO on architecture and technical direction across firmware, signal processing, application software, tooling, and regulatory documentation.</p>
+
+      <div class="skills">
+        <div>
+          <h3>Languages</h3>
+          <p>C · C++ · C# (.NET) · Python · Kotlin/Java · JavaScript/TypeScript · XAML</p>
+        </div>
+        <div>
+          <h3>Embedded &amp; hardware</h3>
+          <p>STM32 · ARM Cortex-M · FreeRTOS · ESP-IDF · bare-metal firmware · Linux SBC (CM4) · camera sensor interfacing · I²C (incl. bit-banged) · SPI · UART · USB (CDC/hub/OTG) · GPIO · BLE · I²S · OLED · SWD/ST-Link · logic analyser · EMC testing</p>
+        </div>
+        <div>
+          <h3>Application</h3>
+          <p>WPF/.NET (MVVM, dependency injection) · Android (Kotlin/Java, Accessibility Services, foreground services, USB host, BLE) · PyQt/PySide6 · Electron · REST/gRPC</p>
+        </div>
+        <div>
+          <h3>Signal processing</h3>
+          <p>Real-time acquisition pipelines · on-device detection and classification · calibration and thresholding · cross-platform numerical parity · latency-bounded processing</p>
+        </div>
+        <div>
+          <h3>Architecture &amp; practice</h3>
+          <p>System design · MVVM · SOLID · UML/SysML · TDD and unit testing · code review · Git branching strategy · CI/CD (GitHub Actions) · release engineering and versioning · V-model · root-cause analysis (5-whys, fishbone) · technical documentation and ADRs</p>
+        </div>
+        <div>
+          <h3>Standards &amp; quality</h3>
+          <p>IEC 62304 · ISO 13485 · ISO 14971 · dFMEA · risk analysis · safety-critical design · traceability · AWS (S3/EC2/IAM) · Google Play Console</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:44px; font-size:19px; font-stretch:112%">Education</h3>
+      <ul class="plainlist">
+        <li>
+          <strong>MSc Computer Science — Queen Mary University of London.</strong> Distinction.
+          <span>Thesis: a hybrid CNN-MLP model classifying musical emotion from EEG and survey data — 89.5% F1-score.</span>
+        </li>
+        <li>
+          <strong>BTech Electronics &amp; Instrumentation Engineering — Amrita School of Engineering, Bangalore.</strong> 2017–2021.
+          <span>Instrumentation internship at ONGC.</span>
+        </li>
+      </ul>
+
+      <h3 style="margin-top:44px; font-size:19px; font-stretch:112%">Talks and internal work</h3>
+      <ul class="plainlist">
+        <li><strong>AI in medtech startups</strong><span>Talk at EarSwitch's strategy offsite: practical adoption, risk, and what transfers into a regulated environment.</span></li>
+        <li><strong>AI governance rollout</strong><span>Risk assessment, governance SOP, and team-wide Claude Code deployment; strategy presented to the CTO.</span></li>
+        <li><strong>RTC failure RCA and test SOP</strong><span>Formal root-cause document adopted as team process — the companion to case study B.</span></li>
+      </ul>
+    </section>
+
+    <!-- ================= TOOLS ================= -->
+    <section class="section" id="tools">
+      <p class="eyebrow">Tools</p>
+      <h2 class="section__title">Things built outside work</h2>
+      <p class="section__intro">Mostly small, mostly built to solve something in front of me.</p>
+
+      <div class="projects">
+        <article>
+          <h3>Bare-metal STM32 firmware<span class="stack">C · ARM Cortex-M</span></h3>
+          <p>Register-level firmware with no HAL — direct GPIO, timer, UART, SPI and I²C configuration, interrupt-driven event handling, memory-mapped peripheral control, custom linker script and boot sequence written from scratch. Debugged over SWD/ST-Link, logic analyser, and serial.</p>
+          <p class="status status--working">Working</p>
+        </article>
+        <article>
+          <h3>FreeRTOS ESP32 audio device<span class="stack">C · FreeRTOS · ESP-IDF</span></h3>
+          <p>Bluetooth audio device with an I²C OLED and playback controls — multi-task scheduling, inter-task communication, BLE for real-time updates. Currently adding I²S mic input with FFT-based spectral feature extraction for sound classification, and extending transport from Bluetooth to WiFi.</p>
+          <p class="status status--wip">In progress</p>
+        </article>
+        <article>
+          <h3>Project Map<span class="stack">HTML · CSS · JS</span></h3>
+          <p>Local mind-mapping tool for software projects: module, service, task and risk nodes, production-readiness states, a per-node launch checklist, live completion percentage, JSON save/load and Markdown export. One self-contained HTML file, no install.</p>
+          <p class="status status--working">Working</p>
+        </article>
+        <article>
+          <h3>Sponsor Checker<span class="stack">JS · Chrome extension APIs</span></h3>
+          <p>Chrome extension cross-referencing LinkedIn job listings against the Home Office licensed sponsor register — built to solve a real constraint in my own job search.</p>
+          <p class="status status--working">Working</p>
+        </article>
+        <article>
+          <h3>Form Filler<span class="stack">Python</span></h3>
+          <p>Automates repetitive application-form entry.</p>
+          <p class="status status--working">Working</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+      <p class="eyebrow">Contact</p>
+      <h2>If you're building something at the hardware/software boundary, I'd like to hear about it.</h2>
+      <p class="lede">Bristol-based, open to embedded, systems, and firmware-to-application roles.</p>
+      <ul class="hero__links" style="margin-top:26px">
+        <li><a href="mailto:REPLACE@example.com">Email</a></li>
+        <li><a href="https://github.com/harshamsh">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/REPLACE">LinkedIn</a></li>
+        <li><a href="cv.pdf">Download CV</a></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <span>Sri Harsha Musunuru · Bristol, UK</span>
+  <span>Built by hand — no framework, no tracking</span>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
