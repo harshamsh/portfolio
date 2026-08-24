@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sri Harsha Musunuru — Embedded Software Engineer</title>
-<meta name="description" content="Embedded software engineer in Bristol. Medical devices, real-time systems, and the desktop and mobile applications on top of them.">
+<title>Sri Harsha Musunuru — Software Engineer</title>
+<meta name="description" content="Software engineer in Bristol working on embedded systems, medical devices and the applications built on top of them.">
 <meta name="author" content="Sri Harsha Musunuru">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Sri Harsha Musunuru — Embedded Software Engineer">
-<meta property="og:description" content="I work at the boundary where hardware stops being predictable and software has to cope.">
+<meta property="og:title" content="Sri Harsha Musunuru — Software Engineer">
+<meta property="og:description" content="Software engineer in Bristol. Embedded systems, medical devices, and the applications on top of them.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,23 +25,23 @@
      ====================================================================== -->
 <header class="hero">
   <h1 class="hero__name">Sri&nbsp;Harsha Musunuru</h1>
-  <p class="hero__role">Embedded software engineer · Bristol, UK</p>
+  <p class="hero__role">Software engineer · Bristol, UK</p>
 
-  <p class="hero__thesis">I work at the boundary where hardware stops being predictable and software has to cope.</p>
+  <p class="hero__thesis">I write software that runs close to hardware, and I want to keep getting better at it.</p>
 
-  <p class="hero__sub">Three years at a Bristol medtech company, across two device programmes — a regulated clinical device and a consumer assistive-gaming product. My work runs from firmware on the board up through the desktop and mobile applications people actually use.</p>
+  <p class="hero__sub">I've spent the last three years at a medtech company in Bristol, working on two devices — one a regulated medical device, the other a consumer product. My work covers firmware on the board, the processing in between, and the desktop and mobile applications people actually use. I'm looking for my next role, ideally somewhere I can work alongside more experienced engineers and go deeper.</p>
 
   <ul class="linkrow">
-    <li><a href="mailto:REPLACE@example.com">Email</a></li>
+    <li><a href="mailto:msriharsha2@gmail.com">msriharsha2@gmail.com</a></li>
+    <li><a href="tel:+447824063309">+44 7824 063309</a></li>
+    <li><a href="https://www.linkedin.com/in/sri-harsha-musunuru/">LinkedIn</a></li>
     <li><a href="https://github.com/harshamsh">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/REPLACE">LinkedIn</a></li>
-    <li><a href="cv.pdf">CV (PDF)</a></li>
   </ul>
 
   <figure class="trace">
     <figcaption class="trace__head">
-      <span>Bench capture · <strong>a working system going quiet mid-operation</strong></span>
-      <span>The part of the job I like most</span>
+      <span>A capture of a working system <strong>going quiet mid-operation</strong></span>
+      <span>The kind of problem I like</span>
     </figcaption>
     <div class="trace__body">
       <svg viewBox="0 0 940 232" role="img" aria-label="A stylised logic-analyser capture. Two signal lines toggle normally, then both drop flat and stay low.">
@@ -56,11 +56,11 @@
 
         <text class="trace__label" x="24" y="30">CLK</text>
         <text class="trace__label" x="24" y="118">DATA</text>
-        <text class="trace__annot trace__annot--calm" x="24" y="226">everything looks healthy right up until it doesn't</text>
+        <text class="trace__annot trace__annot--calm" x="24" y="226">normal operation</text>
         <text class="trace__annot" x="600" y="226">fault</text>
       </svg>
     </div>
-    <p class="trace__caption">Most of the interesting problems in embedded work look like this: a system that reports itself healthy while quietly doing the wrong thing. Finding out what's really happening is the job.</p>
+    <p class="trace__caption">A lot of the problems I end up working on look like this — a system that reports itself as fine while quietly doing something else. Working out what's actually happening is the part of the job I enjoy most.</p>
   </figure>
 </header>
 
@@ -73,10 +73,10 @@
     <ol>
       <li><a href="#areas">What I work on</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#problems">Problems I've solved</a></li>
+      <li><a href="#problems">Problems I've worked on</a></li>
       <li><a href="#approach">How I work</a></li>
       <li><a href="#about">About &amp; skills</a></li>
-      <li><a href="#builds">Built on my own time</a></li>
+      <li><a href="#builds">Personal projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ol>
   </nav>
@@ -86,38 +86,38 @@
     <!-- ================= AREAS ================= -->
     <section class="section" id="areas">
       <p class="eyebrow">What I work on</p>
-      <h2 class="section__title">Five things I get handed, and keep getting handed</h2>
-      <p class="section__intro lede">I'm most useful where a problem crosses a boundary — where the hardware team and the software team each think the fault is on the other side.</p>
+      <h2 class="section__title">The areas I've spent most of my time in</h2>
+      <p class="section__intro lede">Most of my work sits between hardware and software, where it isn't obvious which side a problem belongs to. These are the areas I've built up so far, and the ones I'd like to keep developing.</p>
 
       <div class="areas">
         <article>
           <h3>Firmware and board bring-up</h3>
-          <p>Taking a new board from first power-on to something that behaves reliably: boot sequencing, storage, communication between chips, and the diagnosis work when a board doesn't do what the schematic says it should.</p>
+          <p>Getting a new board from first power-on to something that behaves reliably — start-up, storage, communication between chips, and working out what's wrong when a board doesn't do what the schematic says it should.</p>
           <span class="tags">C · ARM Cortex-M · FreeRTOS · bare-metal</span>
         </article>
         <article>
-          <h3>Real-time sensor pipelines</h3>
-          <p>Getting a continuous stream of sensor data off hardware, through processing, and into a result fast enough to be useful — without dropping data, and without the pipeline falling over when something upstream misbehaves.</p>
+          <h3>Real-time sensor data</h3>
+          <p>Getting a continuous stream of data off hardware, through processing, and into a usable result quickly enough to matter — without dropping data, and without the whole thing falling over when something upstream misbehaves.</p>
           <span class="tags">Linux · Python · C++ · concurrency</span>
         </article>
         <article>
           <h3>Desktop and mobile applications</h3>
-          <p>The layer where the hardware becomes a product. Architecture, the interface, and the unglamorous parts — packaging, releases, and diagnostics that let someone else work out what went wrong.</p>
+          <p>The layer where the hardware becomes something a person can use. Architecture and the interface, plus the less visible parts — packaging, releases, and logging that lets someone else work out what went wrong.</p>
           <span class="tags">C# / .NET · WPF · Kotlin · Android</span>
         </article>
         <article>
-          <h3>Regulated software development</h3>
-          <p>Medical device software under IEC 62304 and ISO 13485: the documentation, risk work and traceability that turns research code into something a regulator will accept, without letting process swallow the engineering.</p>
+          <h3>Regulated medical device software</h3>
+          <p>Working under IEC 62304 and ISO 13485 — the documentation, risk analysis and traceability that turn research code into something a regulator will accept. I've learned a lot from this and would like to keep working in it.</p>
           <span class="tags">IEC 62304 · ISO 13485 · ISO 14971 · risk analysis</span>
         </article>
         <article>
-          <h3>Engineering process and tooling</h3>
-          <p>Build pipelines, release procedures, documentation and internal tools. Usually because I've inherited something fragile and would rather not inherit it twice.</p>
-          <span class="tags">GitHub Actions · CI/CD · Git · internal tools</span>
+          <h3>Build and release process</h3>
+          <p>Build pipelines, release procedures, documentation and internal tools. Usually because I've picked up something fragile and would rather not have to pick it up again.</p>
+          <span class="tags">GitHub Actions · CI/CD · Git</span>
         </article>
         <article>
-          <h3>Diagnosis, generally</h3>
-          <p>The one people actually call me for. Intermittent faults, faults that only appear in the field, and faults where every obvious explanation has already been ruled out by someone else.</p>
+          <h3>Debugging</h3>
+          <p>Intermittent faults, faults that only show up in the field, and faults where the obvious explanations have already been ruled out. This is the work I get asked for most, and the work I most want to get better at.</p>
           <span class="tags">logic analyser · SWD · root-cause analysis</span>
         </article>
       </div>
@@ -127,35 +127,35 @@
     <section class="section" id="projects">
       <p class="eyebrow">Projects</p>
       <h2 class="section__title">What I've worked on</h2>
-      <p class="section__intro lede">All at EarSwitch Ltd, a Bristol medtech company building in-ear sensing technology — founded by a GP after watching motor neurone disease patients lose the ability to communicate. Two product lines, and I've worked across both.</p>
+      <p class="section__intro lede">All at EarSwitch Ltd, a Bristol medtech company working on in-ear sensing technology. It was started by a GP after seeing motor neurone disease patients lose the ability to communicate. There are two product lines and I've worked across both.</p>
 
       <!-- --- PROJECT 1 --- -->
       <article class="project">
         <p class="project__meta"><span>2024 – present</span><span>Regulated medical device</span><span class="live">Clinical investigation</span></p>
         <h3 class="project__title">A clinical vital-signs monitoring device</h3>
-        <p class="project__hook">Taking a research prototype and turning it into medical device software a regulator would accept — while it was still being actively developed.</p>
+        <p class="project__hook">Taking a research prototype and getting it to a state where it could be used in a clinical study — while it was still being actively developed.</p>
 
-        <p>The device measures vital signs from ear-based sensors. When I picked it up it was research code: it worked, in the sense that it produced numbers, but nothing about it was ready for use in a clinical study. My job was the transition — getting it to a state where it could run a study supporting a UK regulatory submission, and where the software's behaviour was documented and defensible rather than just observed.</p>
+        <p>The device measures vital signs from ear-based sensors. When I started on it, it was research code. It worked, in the sense that it produced numbers, but nothing about it was ready for use in a study. My job was that transition: getting it to a point where it could support a UK regulatory submission, and where the software's behaviour was documented rather than just observed.</p>
 
-        <p>That meant two kinds of work at once. The engineering: making the data pipeline reliable enough to run continuously without losing frames, and building the on-device display that surfaces readings and warnings to whoever is running the session. And the regulatory: the development plan, the risk analysis, and the paper trail connecting every requirement to a test that proves it was met.</p>
+        <p>That was two kinds of work at the same time. The engineering side was making the data pipeline reliable enough to run continuously without losing frames, and building the on-device display that shows readings and warnings to whoever is running the session. The regulatory side was the development plan, the risk analysis, and the record connecting each requirement to a test proving it was met.</p>
 
-        <h4>What I owned</h4>
+        <h4>What I did</h4>
         <ul class="owned">
-          <li><strong>The software transition</strong> — from research code to software that meets medical device requirements, on a device that was still changing underneath me.</li>
-          <li><strong>The real-time pipeline</strong> — continuous capture and analysis running in parallel, restructured so the two never contend with each other.</li>
-          <li><strong>The regulatory documentation set</strong> — development plan, procedures, risk analysis, configuration management, and requirements traceability through to verification.</li>
-          <li><strong>Requirements engineering</strong> across a team spanning clinical, hardware and software backgrounds, none of whom shared a vocabulary at the start.</li>
-          <li><strong>Field support</strong> — diagnosing and fixing issues on devices already deployed, under change control.</li>
+          <li><strong>The software transition</strong> — from research code to software meeting medical device requirements, on a device that was still changing while I worked on it.</li>
+          <li><strong>The real-time pipeline</strong> — capture and analysis running at the same time, restructured so the two don't get in each other's way.</li>
+          <li><strong>The regulatory documentation</strong> — development plan, procedures, risk analysis, configuration management and traceability through to verification.</li>
+          <li><strong>Requirements work</strong> across a team of clinical, hardware and software people who didn't share a vocabulary at the start.</li>
+          <li><strong>Support for deployed devices</strong> — diagnosing and fixing issues on units already in the field, under change control.</li>
         </ul>
 
         <div class="annotated">
           <div>
-            <h4>What it took</h4>
-            <p>Mostly patience with two incompatible pressures. Regulated development wants everything specified before it's built; an early-stage device wants to keep changing. Getting both meant being deliberate about what was frozen and what wasn't, and being honest with the team about which was which.</p>
+            <h4>What was hard about it</h4>
+            <p>Two pressures that pull against each other. Regulated development wants things specified before they're built; an early-stage device wants to keep changing. Managing both meant being clear about what was frozen and what wasn't, and being upfront with the team about which was which.</p>
           </div>
           <aside class="note">
             <span class="note__label">Standards</span>
-            <p>IEC 62304 and ISO 13485, with risk analysis under ISO 14971. I owned the software side of all three.</p>
+            <p>IEC 62304 and ISO 13485, with risk analysis under ISO 14971. I handled the software side of these.</p>
           </aside>
         </div>
       </article>
@@ -164,30 +164,30 @@
       <article class="project">
         <p class="project__meta"><span>2024 – present</span><span>Consumer product</span><span class="live">Shown at CES 2026</span></p>
         <h3 class="project__title">An assistive gaming controller</h3>
-        <p class="project__hook">A device that lets you trigger a game action with an ear movement — built for streamers, and for players who can't reliably use their hands.</p>
+        <p class="project__hook">A device that lets you trigger a game action with an ear movement — aimed at streamers, and at players who can't reliably use their hands.</p>
 
-        <p>This is the commercial side of the business, and I'm the only software engineer on it. That means the whole stack is mine: the firmware running on the custom board, the protocol it speaks to a computer, the Windows application most people will use, and the Android app for playing on a phone or tablet.</p>
+        <p>This is the commercial side of the business, and I'm the only software engineer on it. That means the whole stack: the firmware on the custom board, the protocol it uses to talk to a computer, the Windows application most people will use, and the Android app for playing on a phone or tablet.</p>
 
-        <p>The interesting constraint is that the product only works if it feels instant and never misfires. An assistive input device that occasionally misses is worse than no device — the user has already been let down by enough technology. Most of the engineering effort goes into that reliability rather than into features.</p>
+        <p>The main constraint is that it has to feel instant and it can't misfire. An assistive input device that occasionally misses is worse than not having one, so most of the effort goes into reliability rather than features.</p>
 
-        <h4>What I owned</h4>
+        <h4>What I did</h4>
         <ul class="owned">
-          <li><strong>Firmware</strong> for the custom board — start-up, storage, communication with the host, and the factory provisioning process for new units.</li>
-          <li><strong>The Windows application</strong> — architecture designed from scratch to absorb changing requirements without rewrites, plus detection, per-user calibration, and the release and packaging process.</li>
-          <li><strong>The Android application</strong> — from product spec through architecture and build to preparing it for store release, including the accessibility permissions case the product depends on.</li>
-          <li><strong>Consistency across platforms</strong> — making sure the device behaves identically whether it's plugged into a PC or a phone, which turned out to be harder than building either.</li>
-          <li><strong>Release engineering</strong> — automated builds and checks, versioned artifacts, and a written release procedure so shipping isn't a memory exercise.</li>
-          <li><strong>User testing</strong> with domain consultants, and prioritising the interface work off the back of it.</li>
+          <li><strong>Firmware</strong> for the custom board — start-up, storage, communication with the host, and the process for provisioning new units in production.</li>
+          <li><strong>The Windows application</strong> — architecture designed from scratch so it could absorb changing requirements without rewrites, plus detection, per-user calibration, packaging and releases.</li>
+          <li><strong>The Android application</strong> — from the product spec through architecture and build to preparing it for store release, including the accessibility permissions the product depends on.</li>
+          <li><strong>Consistency across platforms</strong> — making sure the device behaves the same whether it's plugged into a PC or a phone, which was harder than building either.</li>
+          <li><strong>Release process</strong> — automated builds and checks, versioned artifacts, and a written procedure so releasing isn't done from memory.</li>
+          <li><strong>User testing</strong> with domain consultants, and using it to prioritise the interface work.</li>
         </ul>
 
         <div class="annotated">
           <div>
-            <h4>What it took</h4>
-            <p>Deciding what not to build. Early on the product vision included things the platforms simply don't allow. I brought a prioritised breakdown to the people who owned that vision, was explicit about which requirements weren't achievable and why, and proposed alternatives — so the schedule was built on what was actually possible.</p>
+            <h4>What was hard about it</h4>
+            <p>Deciding what not to build. Early on the product vision included things the platforms don't actually allow. I put together a prioritised breakdown, was clear about which requirements weren't achievable and why, and suggested alternatives, so the schedule was based on what was possible.</p>
           </div>
           <aside class="note">
-            <span class="note__label">Sole engineer</span>
-            <p>No separate applications team to hand a layer to. Every decision from the board's message format to the installer was one person's.</p>
+            <span class="note__label">Working solo</span>
+            <p>No separate applications team to hand a layer to. It's taught me a lot, though I'd like to work in a bigger engineering team next.</p>
           </aside>
         </div>
       </article>
@@ -195,51 +195,51 @@
       <!-- --- PROJECT 3 --- -->
       <article class="project">
         <p class="project__meta"><span>2023 – 2024</span><span>R&amp;D</span><span>£1.3M UKRI-funded</span></p>
-        <h3 class="project__title">The research platform both products came from</h3>
-        <p class="project__hook">A funded research programme extracting health metrics from ear-based sensors — and the prototype software that made the results visible to everyone else.</p>
+        <h3 class="project__title">The research project both products came out of</h3>
+        <p class="project__hook">A funded research programme looking at health metrics from ear-based sensors, and the prototype software that made the results visible to everyone else on the team.</p>
 
-        <p>I was the software specialist on a Healthy Ageing research project, working alongside clinicians and hardware engineers. The output was a working proof of concept: an application that pulled live sensor data, processed it, and showed the results in a way a non-engineer could interpret and challenge. Alongside it, cross-platform tools the wider team used to validate sensor data over different connection types.</p>
+        <p>I was the software person on a Healthy Ageing research project, working with clinicians and hardware engineers. The output was a working proof of concept: an application that pulled in live sensor data, processed it, and displayed the results so a non-engineer could read and question them. I also built cross-platform tools the wider team used to check sensor data over different connection types.</p>
 
-        <p>I also put the basic engineering discipline in place — version control practice and written procedures for a team where most people hadn't worked that way before. Unglamorous, and the reason the later regulated work was possible at all.</p>
+        <p>I set up the basic engineering practices too — version control and written procedures for a team where most people hadn't worked that way before. Not glamorous, but it's the reason the later regulated work was possible.</p>
 
         <div class="callout">
-          <p class="eyebrow">The lesson I took from it</p>
-          <p>I chose a heavy web-based framework for the prototype interface. It was the right call for a fast, polished demo on a laptop, and the wrong call once the target moved to constrained hardware — the processing core ported cleanly, the interface had to be rebuilt from scratch.</p>
-          <p>The honest lesson is upstream of the rebuild: on a project with that many unknowns, I should have probed where the software would eventually have to run before committing to a framework. It changed how I make stack decisions now — keep the tested core independent of the interface, and ask about the hardware target before the demo target.</p>
+          <p class="eyebrow">Something I got wrong</p>
+          <p>I picked a heavy web framework for the prototype interface. It was a reasonable choice for a quick demo on a laptop and the wrong one once the target moved to constrained hardware — the processing core ported over fine, but the interface had to be rebuilt from scratch.</p>
+          <p>The real mistake was earlier than the rebuild. On a project with that many unknowns I should have checked where the software would eventually have to run before committing to a framework. It's changed how I approach these decisions: keep the tested core separate from the interface, and ask about the hardware target before the demo target.</p>
         </div>
       </article>
     </section>
 
     <!-- ================= PROBLEMS ================= -->
     <section class="section" id="problems">
-      <p class="eyebrow">Problems I've solved</p>
-      <h2 class="section__title">Three that were worth the time</h2>
-      <p class="section__intro lede">Short versions. Happy to go into any of them properly in a conversation.</p>
+      <p class="eyebrow">Problems I've worked on</p>
+      <h2 class="section__title">A few worth mentioning</h2>
+      <p class="section__intro lede">Short versions here. I'm happy to go through any of them properly in a conversation.</p>
 
       <div class="problems">
         <article>
-          <h3>The chip that hijacked its own bus</h3>
-          <p>Programming new units kept failing partway through, at a different point each time. Nine plausible explanations were tested and eliminated before the real one surfaced: a neighbouring chip was quietly taking over the shared connection about a second after power-up, regardless of what anyone else was doing with it.</p>
-          <p>The workaround got production moving the same week; the permanent fix went into the next hardware revision.</p>
-          <span class="takeaway">The test that found it was the one that observed the system directly instead of reasoning about it. It should have run first, not ninth — that's genuinely changed how I sequence a diagnosis.</span>
+          <h3>A chip taking over a shared connection</h3>
+          <p>Programming new units kept failing partway through, at a different point each time. I went through nine plausible explanations and ruled each one out by testing it before the real cause turned up: a neighbouring chip was taking over the shared connection about a second after power-up, regardless of what anyone else was doing with it.</p>
+          <p>The workaround got production moving the same week, and the permanent fix went into the next hardware revision.</p>
+          <span class="takeaway">What I took from it: the test that found it was the one that observed the system directly instead of reasoning about it. It should have been my first test, not my ninth.</span>
         </article>
         <article>
-          <h3>The clock that lied</h3>
-          <p>Devices already deployed for a clinical study were intermittently losing track of time — about the worst place for a fault that undermines the data record. The system reported the clock as healthy throughout.</p>
-          <p>The hardware had a warning signal designed for exactly this condition, and the software layer above it was swallowing that warning. Root cause was mundane; the fix went out to deployed units, along with a written analysis and a test procedure so it's now a checked condition rather than something one person happens to remember.</p>
-          <span class="takeaway">A component reporting itself healthy is not the same as a component being healthy. The work wasn't the fix — it was making an invisible failure visible.</span>
+          <h3>A clock that reported itself as fine</h3>
+          <p>Devices already deployed for a clinical study were intermittently losing track of time, which is a bad fault to have anywhere near a data record. The system reported the clock as healthy the whole time.</p>
+          <p>The hardware had a warning signal for exactly this condition and the software layer above it was swallowing that warning. The underlying cause was mundane. The fix went out to deployed units along with a written analysis and a test procedure, so it's now something that gets checked rather than something one person happens to remember.</p>
+          <span class="takeaway">What I took from it: a component reporting itself as healthy isn't the same as it being healthy. The work wasn't the fix, it was making the failure visible.</span>
         </article>
         <article>
-          <h3>Two platforms, one device, different behaviour</h3>
-          <p>The same detection logic was noticeably more sensitive on mobile than on desktop. A user plugging the device into a phone was effectively getting a different product.</p>
-          <p>Structured root-cause work under deadline pressure traced it back to an optimisation I'd made myself, which had raised the noise level in the data without anyone noticing. Corrected, and the two brought back in line.</p>
-          <span class="takeaway">The cause being my own change is the point. Looking there first is faster than looking there ninth.</span>
+          <h3>The same code behaving differently on two platforms</h3>
+          <p>The same detection logic was noticeably more sensitive on mobile than on desktop, which meant someone plugging the device into a phone was effectively getting a different product.</p>
+          <p>Working through it under deadline pressure, I traced it back to an optimisation I'd made myself that had raised the noise level in the data without anyone noticing. Corrected, and the two brought back in line.</p>
+          <span class="takeaway">What I took from it: the cause being my own change is the point. Checking there early would have been quicker than checking there last.</span>
         </article>
         <article>
-          <h3>Process on a product that didn't require any</h3>
-          <p>The regulated programme has standards forcing discipline on it. The consumer programme had nothing forcing anything — which is exactly how an early-stage product becomes an unmaintainable prototype that ships anyway.</p>
-          <p>I set up build automation, a release procedure, interface documentation and recorded design decisions for the commercial software deliberately: borrowing the parts of regulated practice that earn their keep, and leaving out the parts that only exist to satisfy an auditor.</p>
-          <span class="takeaway">Working under a formal standard teaches you which process is load-bearing and which is theatre. The goal is software that someone who isn't me can maintain.</span>
+          <h3>Setting up process where none was required</h3>
+          <p>The regulated product has standards forcing discipline on it. The consumer product had nothing forcing anything, which is how early-stage software ends up unmaintainable but shipped anyway.</p>
+          <p>I set up build automation, a release procedure, interface documentation and a record of design decisions for the commercial software — taking the parts of regulated practice that are worth having and leaving out the parts that only exist to satisfy an auditor.</p>
+          <span class="takeaway">What I took from it: working under a formal standard teaches you which process is doing real work. What I wanted was software someone other than me could maintain.</span>
         </article>
       </div>
     </section>
@@ -247,17 +247,17 @@
     <!-- ================= APPROACH ================= -->
     <section class="section" id="approach">
       <p class="eyebrow">How I work</p>
-      <h2 class="section__title">Say it early, in a form people can act on</h2>
+      <h2 class="section__title">Raising things early</h2>
 
       <div class="annotated">
         <div>
-          <p class="lede" style="margin-top:20px">When a system's requirements outrun what the platform can actually do, I say so early rather than quietly trying to make it work.</p>
-          <p>That sounds obvious and mostly isn't done, because the early conversation is the uncomfortable one. But a scope problem raised in month one is a planning decision; the same problem raised in month six is a failure. I'd rather bring a prioritised breakdown and a concrete alternative than deliver a surprise later.</p>
-          <p>The same instinct shows up in debugging: name the discrepancy as soon as you see it, find the mechanism, and don't ship two things that behave differently while hoping nobody notices.</p>
+          <p class="lede" style="margin-top:20px">When a system's requirements outrun what the platform can actually do, I'd rather say so early than quietly try to make it work.</p>
+          <p>It sounds obvious and it often doesn't happen, because the early conversation is the uncomfortable one. But a scope problem raised in month one is a planning decision, and the same problem raised in month six is a failure. I'd rather bring a prioritised breakdown and a concrete alternative than deliver a surprise later on.</p>
+          <p>The same thing applies to debugging. If two things behave differently, say so as soon as you notice, find out why, and don't ship both hoping nobody spots it.</p>
         </div>
         <aside class="note">
           <span class="note__label">In practice</span>
-          <p>Both product programmes have had a moment where the honest answer was "not in this timeline, and here's what we can do instead." Both went better for it.</p>
+          <p>Both products have had a point where the honest answer was "not in this timeline, but here's what we can do instead." Both went better for it.</p>
         </aside>
       </div>
     </section>
@@ -265,13 +265,15 @@
     <!-- ================= ABOUT ================= -->
     <section class="section" id="about">
       <p class="eyebrow">About</p>
-      <h2 class="section__title">Instrumentation, broadly defined</h2>
+      <h2 class="section__title">A bit more about me</h2>
 
-      <p class="section__intro lede" style="margin-top:20px">The through-line across everything above is finding hidden or ambiguous system state and making it legible.</p>
+      <p class="section__intro lede" style="margin-top:20px">The thread running through most of my work is finding hidden or unclear system state and making it visible.</p>
 
-      <p>A signal buried in raw sensor data. A chip quietly taking over a connection it was supposed to share. A fault that reads as healthy while producing invalid results. The job is always the same shape: find the invisible state, prove what it actually is, build something reliable on top of it — then write it down so the next person doesn't have to rediscover it.</p>
+      <p>A signal buried in raw sensor data. A chip quietly taking over a connection it was supposed to share. A fault that reads as healthy while producing invalid results. It's usually the same shape of problem: work out what's actually happening, prove it, build something reliable on top of it, and write it down so the next person doesn't have to find it again.</p>
 
-      <p>I've spent three years at EarSwitch, working directly with the CTO on technical direction across firmware, signal processing, application software and regulatory documentation. Before that, an MSc in Computer Science and a background in electronics and instrumentation engineering.</p>
+      <p>I've been at EarSwitch for three years, working closely with the CTO across firmware, signal processing, application software and regulatory documentation. Before that I did an MSc in Computer Science and an undergraduate degree in electronics and instrumentation engineering.</p>
+
+      <p>What I'd like next is a role with more people around me to learn from. Working as the only software engineer on a product has taught me a lot and forced me to cover ground quickly, but I've had limited exposure to code review from more experienced engineers and to established engineering practice in a larger team. That's the main thing I'm looking for.</p>
 
       <div class="skills">
         <div>
@@ -314,36 +316,36 @@
 
       <h3 style="margin-top:44px; font-size:19px; font-stretch:112%">Also</h3>
       <ul class="plainlist">
-        <li><strong>AI in medtech startups</strong><span>Talk at a company strategy offsite: practical adoption, risk, and what transfers into a regulated environment.</span></li>
-        <li><strong>AI governance rollout</strong><span>Risk assessment, a written governance procedure, and a team-wide tooling rollout; strategy presented to the CTO.</span></li>
+        <li><strong>AI in medtech startups</strong><span>A talk I gave at a company strategy offsite on practical adoption, risk, and what transfers into a regulated environment.</span></li>
+        <li><strong>AI tooling rollout</strong><span>Risk assessment, a written governance procedure and a team-wide rollout, presented to the CTO.</span></li>
       </ul>
     </section>
 
     <!-- ================= BUILDS ================= -->
     <section class="section" id="builds">
-      <p class="eyebrow">Built on my own time</p>
-      <h2 class="section__title">Things I've made outside work</h2>
-      <p class="section__intro">Small, mostly built to solve something in front of me.</p>
+      <p class="eyebrow">Personal projects</p>
+      <h2 class="section__title">Things I've built outside work</h2>
+      <p class="section__intro">Small projects, mostly built either to learn something properly or to solve a problem I had.</p>
 
       <div class="builds">
         <article>
           <h3>Bare-metal firmware project<span class="stack">C · ARM Cortex-M</span></h3>
-          <p>Firmware written directly against the hardware with no vendor abstraction layer — peripherals, interrupts, boot sequence and memory layout configured from scratch, to understand properly what the usual libraries are doing on your behalf.</p>
+          <p>Firmware written directly against the hardware with no vendor abstraction layer — peripherals, interrupts, boot sequence and memory layout set up from scratch. I built it to understand what the usual libraries are doing on my behalf.</p>
           <p class="status status--working">Working</p>
         </article>
         <article>
           <h3>Wireless audio device<span class="stack">C · FreeRTOS · ESP-IDF</span></h3>
-          <p>A Bluetooth audio device with a small display and playback controls, built on a real-time operating system. Currently extending it with microphone input and frequency analysis for basic sound classification.</p>
+          <p>A Bluetooth audio device with a small display and playback controls, built on a real-time operating system. I'm currently adding microphone input and frequency analysis for basic sound classification.</p>
           <p class="status status--wip">In progress</p>
         </article>
         <article>
           <h3>Project Map<span class="stack">HTML · CSS · JS</span></h3>
-          <p>A local mind-mapping tool for software projects — modules, tasks and risks as nodes, with readiness states and live completion tracking. One self-contained file, nothing to install.</p>
+          <p>A local mind-mapping tool for software projects — modules, tasks and risks as nodes, with readiness states and completion tracking. One self-contained file, nothing to install.</p>
           <p class="status status--working">Working</p>
         </article>
         <article>
           <h3>Sponsor Checker<span class="stack">JS · Chrome extension</span></h3>
-          <p>A browser extension that cross-references job listings against the Home Office licensed sponsor register — built to solve a real constraint in my own job search.</p>
+          <p>A browser extension that cross-references job listings against the Home Office licensed sponsor register. I built it to solve a real constraint in my own job search.</p>
           <p class="status status--working">Working</p>
         </article>
       </div>
@@ -352,13 +354,13 @@
     <!-- ================= CONTACT ================= -->
     <section class="contact" id="contact">
       <p class="eyebrow">Contact</p>
-      <h2>If you're building something at the hardware/software boundary, I'd like to hear about it.</h2>
-      <p class="lede">Bristol-based. Open to embedded, systems and firmware-to-application roles.</p>
+      <h2>I'm looking for my next role — get in touch.</h2>
+      <p class="lede">Bristol-based, interested in embedded, systems and firmware-to-application work. Happy to talk through any of the projects above in more detail.</p>
       <ul class="linkrow" style="margin-top:26px">
-        <li><a href="mailto:REPLACE@example.com">Email</a></li>
+        <li><a href="mailto:msriharsha2@gmail.com">msriharsha2@gmail.com</a></li>
+        <li><a href="tel:+447824063309">+44 7824 063309</a></li>
+        <li><a href="https://www.linkedin.com/in/sri-harsha-musunuru/">LinkedIn</a></li>
         <li><a href="https://github.com/harshamsh">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/REPLACE">LinkedIn</a></li>
-        <li><a href="cv.pdf">Download CV</a></li>
       </ul>
     </section>
 
